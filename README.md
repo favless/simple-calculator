@@ -3,7 +3,7 @@ Simple calculator built in HTML & JavaScript, with a few neat features added lik
 
 
 # HOW TO USE
-Double-click on **index.html** to launch it on your prefered browser. Alternatively, you can visit (site).
+Double-click on **index.html** to launch it on your prefered browser. Alternatively, you can visit the [netlify site](https://iekdelta-simple-calc.netlify.app/).
 
 
 ## Known bugs/Missing features
