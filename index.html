@@ -14,29 +14,34 @@
     </header>
 
     <div class="calc-container">
-        <input type="text">
-        <div>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="secondary">C</button>
-            <button class="primary">/</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="secondary">+/-</button>
-            <button class="primary">X</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="secondary">mod</button>
-            <button class="primary">-</button>
-            <button>AC</button>
-            <button>0</button>
-            <button>.</button>
-            <button class="primary">=</button>
-            <button class="primary">+</button>
+        <div class="field-container">
+            <input type="text" id="field">
+            <span id="preview"></span>
+        </div>
+        <div class="buttons">
+            <button onclick="appendToField('7')">7</button>
+            <button onclick="appendToField('8')">8</button>
+            <button onclick="appendToField('9')">9</button>
+            <button onclick="deleteField(false)" class="secondary">C</button>
+            <button onclick="appendToField('/')" class="primary">/</button>
+            <button onclick="appendToField('4')">4</button>
+            <button onclick="appendToField('5')">5</button>
+            <button onclick="appendToField('6')">6</button>
+            <button class="secondary">( )</button>
+            <button onclick="appendToField('*')" class="primary">X</button>
+            <button onclick="appendToField('1')">1</button>
+            <button onclick="appendToField('2')">2</button>
+            <button onclick="appendToField('3')">3</button>
+            <button onclick="appendToField('%')" class="secondary">mod</button>
+            <button onclick="appendToField('-')" class="primary">-</button>
+            <button onclick="deleteField(true)">AC</button>
+            <button onclick="appendToField('0')">0</button>
+            <button onclick="appendToField('.')">.</button>
+            <button onclick="calculateField()" class="primary">=</button>
+            <button onclick="appendToField('+')" class="primary">+</button>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
