@@ -6,5 +6,5 @@ Simple calculator built in HTML & JavaScript, with a few neat features added lik
 Download the source code, and double-click on **index.html** to launch it on your prefered browser. Alternatively, you can visit the [netlify site](https://iekdelta-simple-calc.netlify.app/).
 
 
-## Known bugs/Missing features
-- [missing] Grouping function
+## Known bugs & Missing/Incomplete features
+- [incomplete] Grouping needs a lot of work.

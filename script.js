@@ -9,23 +9,30 @@ function checkForPreview() {
     }
 }
 
-inputField.addEventListener("input", function () {
-    this.value = this.value
-        .replace(/[^0-9+\-*/%().]/g, "") // invalid chars
-        .replace(/(\.\.+)/g, ".") // multiple dots
-        .replace(/([+\-*/%])\1+/g, "$1"); // multiple operators
+function controlInput() {
+    inputField.value = inputField.value
+    .replace(/[^0-9+\-*/%().]/g, "") // invalid chars
+    .replace(/(\.\.+)/g, ".") // multiple dots
+    .replace(/([+\-*/%])\1+|(\)\()|(\d+\()/g, "$1"); // adjacent operators and/or groups
+}
 
+inputField.addEventListener("input", function () {
+    controlInput()
     checkForPreview()
 });
 
 function appendToField(char) {
-    inputField.value += char
+    if (char == 'group') {
+        if (/[()]/.test(inputField.value.slice(-1))) {
+            deleteField(false)
+        } else {
+            console.log("add bracket")
+        }
+    } else {
+        inputField.value += char
+    }
 
-    inputField.value = inputField.value
-        .replace(/[^0-9+\-*/%().]/g, "") // invalid chars
-        .replace(/(\.\.+)/g, ".") // multiple dots
-        .replace(/([+\-*/%])\1+/g, "$1"); // multiple operators
-
+    controlInput()
     checkForPreview()
 }
 
