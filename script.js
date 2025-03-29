@@ -13,7 +13,7 @@ function controlInput() {
     inputField.value = inputField.value
     .replace(/[^0-9+\-*/%().]/g, "") // invalid chars
     .replace(/(\.\.+)/g, ".") // multiple dots
-    .replace(/([+\-*/%])\1+|(\)\()|(\d+\()/g, "$1"); // adjacent operators and/or groups
+    .replace(/([+\-*/%])\1+|(\)\()|(\d+)(\()/g, "$1$3"); // adjacent operators and/or groups
 }
 
 inputField.addEventListener("input", function () {
@@ -26,7 +26,14 @@ function appendToField(char) {
         if (/[()]/.test(inputField.value.slice(-1))) {
             deleteField(false)
         } else {
-            console.log("add bracket")
+            let lastOpeningIndex = inputField.value.lastIndexOf("(")
+            let lastClosingIndex = inputField.value.lastIndexOf(")")
+
+            if (lastOpeningIndex > lastClosingIndex) {
+                inputField.value += ")"
+            } else {
+                inputField.value += "("
+            }
         }
     } else {
         inputField.value += char

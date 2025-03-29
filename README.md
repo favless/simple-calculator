@@ -7,4 +7,4 @@ Download the source code, and double-click on **index.html** to launch it on you
 
 
 ## Known bugs & Missing/Incomplete features
-- [incomplete] Grouping needs a lot of work.
+- [bug] Some inconsistency on the preview when brackets are involved. Specificaly when closing and then removing a bracket.
